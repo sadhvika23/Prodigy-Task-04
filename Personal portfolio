@@ -1,0 +1,235 @@
+\\index.html
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home">
+        <div class="hero">
+            <img src="profile.jpg" alt="MY Name">
+            <h1>Hi, I'm [R.Sadhvika]</h1>
+            <p>Web Developer | Designer | Problem Solver</p>
+        </div>
+    </section>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <p>I’m sadhvika, a 3rd year B.Tech student. I am majoring in
+            Computer Science with a focus on data Science and big data.
+            I consider myself a responsible and orderly person.
+            I am looking forward for my work experience. Passionate about
+            Problem-Solving, Programming Proficiency, Communication
+            Analytical Skills. Committed to continuous learning and
+            professional growth.</p>
+    </section>
+
+    <section id="skills">
+        <h2>Skills</h2>
+        <ul>
+            <li>HTML, CSS, JavaScript</li>
+            <li>React, Node.js</li>
+            <li>Responsive Design</li>
+            <li>Version Control (Git)</li>
+        </ul>
+    </section>
+
+    <section id="projects">
+        <h2>Projects</h2>
+        <div class="project">
+            <h3>ASTROLOGY</h3>
+            <p>The astrology project aims to explore celestial influences on human lives through rigorous 
+                research and analysis. By examining planetary alignments and their potential correlations
+                 with personality traits and life events, it seeks to uncover deeper insights into the 
+                 ancient practice of astrology. The system supported by a HTML ,Python.</p>
+        </div>
+        <div class="project">
+            <h3>LMS</h3>
+            <p>It is Learning Management System where shudents could see all their relavent data in this website</p>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>Get in touch via <a href="mailto:your.email@example.com">email</a>.</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Your Name. All rights reserved.</p>
+    </footer>
+</body>
+</html>
+
+\\script.js
+
+// Smooth Scrolling for Navigation Links
+document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
+
+// Responsive Navigation Menu Toggle
+const navToggle = document.createElement('button');
+navToggle.id = 'nav-toggle';
+navToggle.innerHTML = '☰';
+document.querySelector('header').appendChild(navToggle);
+
+const navMenu = document.querySelector('nav ul');
+navToggle.addEventListener('click', () => {
+    navMenu.classList.toggle('active');
+});
+
+// Adjust CSS for Responsive Menu
+const style = document.createElement('style');
+style.textContent = `
+    #nav-toggle {
+        display: none;
+        background: #333;
+        color: white;
+        border: none;
+        font-size: 24px;
+        padding: 10px;
+        cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+        nav ul {
+            display: none;
+            flex-direction: column;
+            width: 100%;
+            position: absolute;
+            top: 50px;
+            left: 0;
+            background-color: #333;
+        }
+
+        nav ul.active {
+            display: flex;
+        }
+
+        nav ul li {
+            margin: 10px 0;
+        }
+
+        #nav-toggle {
+            display: block;
+        }
+    }
+`;
+document.head.appendChild(style);
+
+\\styles.css
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+section {
+    padding: 60px 20px;
+    margin: 20px 0;
+}
+
+.hero {
+    text-align: center;
+}
+
+.hero img {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+}
+
+.hero h1 {
+    font-size: 2.5em;
+    margin: 10px 0;
+}
+
+.hero p {
+    font-size: 1.2em;
+    color: #555;
+}
+
+#about, #skills, #projects, #contact {
+    background-color: #f4f4f4;
+    padding: 40px;
+    border-radius: 8px;
+    margin: 20px auto;
+    max-width: 800px;
+}
+
+#skills ul {
+    list-style: none;
+    padding: 0;
+}
+
+#skills ul li {
+    padding: 5px 0;
+}
+
+.project {
+    margin-bottom: 20px;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
